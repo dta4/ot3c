@@ -1,0 +1,5 @@
+*.exe
+.terraform
+__debug_bin
+tfile.yaml
+output.csv
