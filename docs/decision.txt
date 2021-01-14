@@ -1,0 +1,23 @@
+@startuml
+
+|A Section|
+start
+:get over_budget; 
+note right: over_budget=Amount of money over target budget
+repeat
+:get next resource with lowest prio;
+:find interval under cost graph where integral == over_budget;
+if (found interval?) then (integral == over_budget)
+
+:add resource to terminate list;
+:set termination to beginning of interval;
+:set over_budget=0;
+else(integral != over_budget)
+:subtract predicted cost from over_budget;
+:add resource to terminate list;
+:set termination to ASAP;
+endif
+repeat while(over_budget!=0)
+stop
+
+@enduml

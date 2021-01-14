@@ -1,0 +1,35 @@
+@startuml
+start
+
+:parse and verify config;
+
+
+repeat
+
+  :aggregate data;
+  :create priority list;
+
+
+  #AAAAAA:WIP Algorithm;
+
+ fork
+   repeat
+   :wait for event;
+   if (is email event) then (yes)
+     :send email to resource owner;
+   elseif (is termination event) then (yes)
+
+    :terminate resource;
+    :notify resource owner/other parties;
+
+   endif
+   repeat while (has next event);
+   detach
+ fork again
+   :wait/watch for changes;
+
+ endfork
+repeat while
+
+stop
+@enduml

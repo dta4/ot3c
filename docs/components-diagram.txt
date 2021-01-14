@@ -1,0 +1,21 @@
+@startuml
+
+agent OT3C
+
+node OTC [
+OTC-API
+]
+node ED [
+ED-Cost-API
+]
+node mail [
+EMAIL-Server
+]
+OT3C <--> ED
+OT3C <--> OTC
+OT3C <--> mail
+legend center
+EB --> "Enterprice Dashboard OTC"
+OTC --> "Open Telekom Cloud"
+endlegend
+@enduml
